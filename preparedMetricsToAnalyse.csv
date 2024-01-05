@@ -1,5 +1,5 @@
 extractedMetrics
-dataset_name;num_instances_train;num_instances_test;train_test_ratio;num_features;num_classes;label_skew;euclidean_distance;dynamic_time_warping_learned;dynamic_time_warping_fixed;default_rate;num_missing_values;perc_missing_values;num_duplicate_instances;perc_duplicate_instances;avg_autocorrelation;ks_statistic;ks_p_value
+dataset_name;num_instances_train;num_instances_test;train_test_ratio;num_features;num_classes;label_skew;euclidean_distance;dynamic_time_warping_learned;dynamic_time_warping_fixed;default_error_rate;num_missing_values;perc_missing_values;num_duplicate_instances;perc_duplicate_instances;avg_autocorrelation;ks_statistic;ks_p_value
 ACSF1;100;100;1;1460;10;0.0;0.4600;0.3800;0.3600;0.9000;0;0;0;0;0.32031717476796756;0.30126027397260274;0.0
 Adiac;390;391;0,997442455242967;176;37;0.00324327852702575;0.3887;0.3913;0.3964;0.9591;0;0;0;0;0.0015649763333107384;0.08633308113141663;0.0
 AllGestureWiimoteX;300;700;0,428571428571429;500;10;0.0;0.4843;0.2829;0.2843;0.9000;0;0;1;0.0002;0.006480328576629927;0.4438802395209581;0.0
