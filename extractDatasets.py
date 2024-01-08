@@ -10,6 +10,8 @@ def find_tsv_files(root_folder):
     return tsv_files
 
 def copy_tsv_files_to_folder(tsv_files, destination_folder):
+    if not os.path.exists(destination_folder):
+        os.makedirs(destination_folder)
     for tsv_file in tsv_files:
         shutil.copy(tsv_file, destination_folder)
 
