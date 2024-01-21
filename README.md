@@ -1,28 +1,28 @@
 # Data Set Quality Evaluation Criteria
 
-This project is designed to evaluate the data sets of the UCR Time Series Classification Archive using various quality metrics. The results are discussed in depth in our paper "An Analysis of Quantitative Quality Metrics for Univariate Time Series Classification Benchmark Data Sets".
+This project is designed to analyse the data sets of the UCR Time Series Classification Archive using quantitative metrics.
+The results are discussed in depth in our paper "An Analysis of Quantitative Quality Metrics for Univariate Time Series Classification Benchmark Data Sets".
 
-## Overview
+## Scripts
+The scripts are numbered in the order they should be run.
 
-- extractDatasets.py: This script is designed to find and copy all files with a '.tsv' extension from a specified root folder and its subfolders to a destination folder.
-- concatTrainAndTestData.ipynb: This script concatenates pairs of training and testing datasets from the UCR Time Series Classification archive.
-- zNormalizeUnscaledDatasets.ipynb: The purpose of this script is to normalize the 13 unscaled data sets from the UCR Time Series Classification Archive.
-- extractMetricValues.ipynb: This script serves the purpose of extracting various statistical metrics and information from the data sets into a .csv-file.
-- preparedMetricsToAnalyse.csv: This table includes all the 
-- analyseDatasets.ipynb: With this script, the data sets are analysed. A correlation matrix, histograms, box plots and scatter plots are created, the normal ranges are calculated and the outlier data sets are specified as a percentage.
+1. extractDatasets.py: extract all the data sets from the downloaded UCR Time Series Classification Archive files into a single folder
+2. zNormalizeUnscaledDatasets.ipynb: z-normalize the 13 unscaled data sets added to the archive in 2018
+3. concatTrainAndTestData.ipynb: concatenates pairs of training and testing data sets
+5. extractMetricValues.ipynb: extract the objectively evaluable metrics for each time series data set
+5. analyseDatasets.ipynb: analyse the extracted metrics, create visualizations, define normal ranges and specify percentage of data sets outside of normal range
 
-### Prerequisites
+## Prerequisites
 
-In order for the scripts to run, it is assumed that the UCR Time Series Classification Archive can be found unzipped in the root folder. The archive can be downloaded here: https://www.cs.ucr.edu/%7Eeamonn/time_series_data_2018/
+In order for the scripts to run, it is assumed that the UCR Time Series Classification Archive lies unzipped at the root folder.
+The archive can be downloaded here: https://www.cs.ucr.edu/%7Eeamonn/time_series_data_2018/
 
-### Reproducing the test
+If you want to start with the analysis of the extracted metrics right away, you can skip step 1-4 by using the provided extractedMetrics.csv file (result of step 4).
 
-1. Make sure to have the "UCRArchive_2018"-folder in your root folder.
-2. Run the extractDatasets.py script.
-3. Run the concatTrainAndTestData.ipynb script.
-3. Run the zNormalizeUnscaledDatasets.ipynb script.
-4. Run the extractMetricValues.ipynb script.
-5. [OPTIONAL] Import the extractedMetrics.csv & the .csv from the UCR archive website into a Excel file. Sort ascending by data set name. Manually transfer the desired information from the UCR table ('additionalUCRInformation.csv' in this case) to the 'extractedMetrics' table. This involves filling in the empty columns in the 'extractedMetrics.csv' table with information from the UCR table.Remove the value for the learned 'w' in the 'dynamic time warping learned' column. Specifically for the 'SmoothSubspace' dataset, insert the mean of all KS statistic values. This is done because of an initially calculated value of 66, and the calculation error could not be found. Manually calculate the following metrics for each dataset:
-train test ratio, percentage of missing values, percentage of duplicate values 
-6. Run the analyseDatasets.ipynb script.
+## Results
 
+There are five files in the results folder:
+- histograms.png: contains a PNG of the histograms of the metrics
+- scatterplots.png: contains a PNG of the scatter plots of the metrics
+- boxplots.png: contains a PNG of the box plots of the metrics
+- metric_correlation_matrix.png: contains a PNG of the correlation matrix of the metrics
